@@ -1,0 +1,30 @@
+{
+  "clientes": [
+    {
+      "nome": "Diego",
+      "idade": "21",
+      "cpf": "11111111111",
+      "endereco": "Rua 11",
+      "telefone": "11111",
+      "id": 1
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Camisa Black Power",
+      "descricao": "O cabelo blackpower transcende o campo da beleza e significa um encontro com a identidade e, por quê não, uma ferramenta de afirmação.",
+      "preco": "R$ 45",
+      "tamanho": "P",
+      "imagem": "https://github.com/diegofrazao/p4-PWEB/blob/master/Suite420/src/app/shared/images/1.png?raw=true"
+    },
+    {
+      "imagem": "https://github.com/diegofrazao/p4-PWEB/blob/master/Suite420/src/app/shared/images/2.png?raw=true",
+      "tamanho": "G",
+      "preco": "R$ 45",
+      "descricao": "Clube das Witch Ganja Girls",
+      "nome": "Camisa Witch Ganja Girl",
+      "id": 2
+    }
+  ]
+}

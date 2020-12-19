@@ -1,0 +1,15 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" class="listar-produto" fxLayoutGap="10px">
+  <mat-card *ngFor="let produto of produtos" fxFlex="20%">
+    <mat-card-header>
+      <mat-card-title>{{produto.nome}}</mat-card-title>
+      <mat-card-subtitle class="sub">Preço: R$ {{produto.preco}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="produto.imagem" [alt]="produto.nome" >
+    <mat-card-content>
+      <p>{{produto.descricao}}</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center center" class="car-action">
+      <button mat-raised-button><mat-icon>add_shopping_cart</mat-icon> Adicionar ao carrinho</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

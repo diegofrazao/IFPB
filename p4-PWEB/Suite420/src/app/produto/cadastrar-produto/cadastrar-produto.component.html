@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column">
+  <mat-card class="menu-card-cadastrar">
+    <mat-card-header>
+      <mat-card-title *ngIf="operacaoCadastro">Cadastrando Produto</mat-card-title>
+      <mat-card-title *ngIf="!operacaoCadastro">Editando Produto</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="menu-form-cadastrar">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="produto.nome">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="menu-form-cadastrar">
+        <mat-label>Descrição</mat-label>
+        <input matInput [(ngModel)]="produto.descricao">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="menu-form-cadastrar">
+        <mat-label>Preço</mat-label>
+        <input matInput [(ngModel)]="produto.preco">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="menu-form-cadastrar">
+        <mat-label>Imagem</mat-label>
+        <input matInput [(ngModel)]="produto.imagem">
+      </mat-form-field>
+      <button mat-raised-button (click)="cadastrarProduto()" class="botao-cadastrar" *ngIf="operacaoCadastro">Adicionar <mat-icon>add</mat-icon></button>
+      <button mat-raised-button (click)="cadastrarProduto()" class="botao-cadastrar" *ngIf="!operacaoCadastro">Editar <mat-icon>edit</mat-icon></button>
+    </mat-card-content>
+  </mat-card>
+</div>
