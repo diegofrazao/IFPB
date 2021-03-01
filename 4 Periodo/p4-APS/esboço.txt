@@ -1,0 +1,21 @@
+MSG_01 – Login incorreto: “E-mail ou Senha incorretos”.
+MSG_02 – Cadastro incompleto: “Todos os campos são obrigatórios”.
+MSG_03 – Cadastro realizado: “Seu cadastro foi realizado com sucesso!”.
+MSG_04 – Cancelar cadastro: "Cadastro cancelado".
+MSG_05 – Login requerido: “É necessário estar logado para continuar".
+MSG_06 - Sistema inativo: "Sistema fora do ar, retorne após alguns minutos".
+MSG_07 - Cadastro inválido: "Cadastro inválido, tente novamente".
+
+RN_01 – Cadastro válido: O cliente precisa ter um CPF e e-mail válidos para poder fazer o cadastro. O vendedor precisa ter CPF/CNPJ, e-mail e telefone válidos para poder se cadastrar.
+RN_02 – Realização de pedido: O cliente deve estar logado/cadastrado para poder realizar o pedido. 
+RN_03 – Conclusão de compra: Para poder concluir a compra do pedido, o cliente necessita informar todos os dados corretamente e precisa estar logado. 
+RN_04 – Anúncio de um produto: Um anuncio deve ser feito apenas por pessoas logadas como vendedor.
+RN_05 – Login correto: O login é feito com as credenciais e-mail e senha inseridos corretamente.
+RN_06 - Pagamento válido: Forma de pagamento deverá conter um cartão de crédito válido ou boleto pago antes do vencimento.
+RN_07 - Remoção de produto: Um produto não pode ser removido enquanto houver pedidos pendentes.
+RN_08 - Produto duplicado: Um produto não pode ser cadastrado duas vezes no site.
+
+
+RV_01 – Verificação de CPF/CNPJ: O CPF deverá ser composto por 11 algarismos; o CNPJ deverá ser composto por 14 algarismos.
+RV_02 – Senha forte: A senha deve conter caracteres alfanuméricos e símbolos.
+RV_03 – Itens mínimo: Deve conter pelo menos 1 item no carrinho para poder efetuar uma compra.
