@@ -1,1 +1,0 @@
-gerar código unico para validar (cliente ou estabelecimento)
