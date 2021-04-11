@@ -1,6 +1,7 @@
 package com.example.minhascores
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class ListViewAdapter(var context: Context, var colors: ArrayList<Color>): BaseAdapter() {
+class ListViewAdapter(var context: Context, var colors: ArrayList<Collor>): BaseAdapter() {
     override fun getCount(): Int {
         return colors.size
     }
@@ -38,7 +39,7 @@ class ListViewAdapter(var context: Context, var colors: ArrayList<Color>): BaseA
         val ccode = colors[position].toHex()
 
         colorName.text = color.name
-        colorCode.text = color.toHex()
+        colorCode.text = String.format("#%02X", (0xFF and color.code))
 
         return row
     }

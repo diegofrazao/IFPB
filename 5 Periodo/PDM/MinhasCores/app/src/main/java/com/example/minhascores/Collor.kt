@@ -2,7 +2,7 @@ package com.example.minhascores
 
 import java.io.Serializable
 
-class Color: Serializable {
+class Collor: Serializable {
     var id: Int
     var name: String
     var code: Int

@@ -11,7 +11,7 @@ private const val ADDCOLOR = 1
 class MainActivity : AppCompatActivity() {
     private lateinit var fbAdd: FloatingActionButton
     private lateinit var lvColor: ListView
-    private lateinit var colors: ArrayList<Color>
+    private lateinit var collors: ArrayList<Collor>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,12 +19,13 @@ class MainActivity : AppCompatActivity() {
 
         this.fbAdd = findViewById(R.id.fbMainAdd)
         this.lvColor = findViewById(R.id.lvMainColors)
-        this.colors = ArrayList()
-        this.lvColor.adapter = ListViewAdapter(this, this.colors)
+        this.collors = ArrayList()
+        this.lvColor.adapter = ListViewAdapter(this, this.collors)
 
-        this.colors.add(Color("primeira cor", 255))
-        this.colors.add(Color("segunda cor", 253))
-        this.colors.add(Color("terceira cor", 234))
+
+        this.collors.add(Collor("primeira cor", 255))
+        this.collors.add(Collor("segunda cor", 120))
+        this.collors.add(Collor("terceira cor", 0))
 
         fbAdd.setOnClickListener({ addColor(it) })
 

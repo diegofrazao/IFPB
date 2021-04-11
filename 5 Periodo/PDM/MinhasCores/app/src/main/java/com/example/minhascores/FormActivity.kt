@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
+import kotlin.text.*
 
 class FormActivity : AppCompatActivity() {
     private lateinit var etColorName: EditText
@@ -28,6 +29,46 @@ class FormActivity : AppCompatActivity() {
         this.btSave = findViewById(R.id.btFormSave)
         this.btCancel = findViewById(R.id.btFormCancel)
 
-        btCancel.setOnClickListener({ finish() })
+        sbRed.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                val progressRed = String.format("#%02X", (0xFF and progress))
+                val progressGreen = String.format("%02X", (0xFF and sbGreen.progress))
+                val progressBlue = String.format("%02X", (0xFF and sbBlue.progress))
+                btCode.text = "${progressRed}${progressGreen}${progressBlue}"
+                btCode.setBackgroundColor(255)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        sbGreen.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                val progressRed = String.format("#%02X", (0xFF and sbRed.progress))
+                val progressGreen = String.format("%02X", (0xFF and progress))
+                val progressBlue = String.format("%02X", (0xFF and sbBlue.progress))
+                btCode.text = "${progressRed}${progressGreen}${progressBlue}"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        sbBlue.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                val progressRed = String.format("#%02X", (0xFF and sbRed.progress))
+                val progressGreen = String.format("%02X", (0xFF and sbGreen.progress))
+                val progressBlue = String.format("%02X", (0xFF and progress))
+                btCode.text = "${progressRed}${progressGreen}${progressBlue}"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        btCancel.setOnClickListener { finish() }
     }
 }
