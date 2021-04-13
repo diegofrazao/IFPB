@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import java.util.*
+import kotlin.collections.ArrayList
 
-class ListViewAdapter(var context: Context, var colors: ArrayList<Collor>): BaseAdapter() {
+class ListViewAdapter(var context: Context, var collors: ArrayList<Collor>): BaseAdapter() {
     override fun getCount(): Int {
-        return colors.size
+        return collors.size
     }
 
     override fun getItem(position: Int): Any {
-        return colors[position]
+        return collors[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -23,7 +25,7 @@ class ListViewAdapter(var context: Context, var colors: ArrayList<Collor>): Base
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val color = this.colors[position]
+        val color = this.collors[position]
         val row: View
 
         if (convertView == null) {
@@ -36,11 +38,27 @@ class ListViewAdapter(var context: Context, var colors: ArrayList<Collor>): Base
         val imageColor = row.findViewById<ImageView>(R.id.ivAdapterImageColor)
         val colorName = row.findViewById<TextView>(R.id.tvAdpaterColorName)
         val colorCode = row.findViewById<TextView>(R.id.tvAdpaterColorCode)
-        val ccode = colors[position].toHex()
 
+        imageColor.setColorFilter(Color.parseColor(color.toHex()))
         colorName.text = color.name
-        colorCode.text = String.format("#%02X", (0xFF and color.code))
+        colorCode.text = String.format("#%06X", (0xFFFFFF and color.code))
 
         return row
+    }
+
+    fun add (collor: Collor) {
+        collors.add(collor)
+        collors.sort()
+        notifyDataSetChanged()
+    }
+
+    fun remove (collor: Collor) {
+        collors.remove(collor)
+        notifyDataSetChanged()
+    }
+
+    fun update() {
+        collors.sort()
+        notifyDataSetChanged()
     }
 }
