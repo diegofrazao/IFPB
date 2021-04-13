@@ -57,8 +57,6 @@ class FormActivity : AppCompatActivity() {
     }
 
 //
-//    FUNCTIONS
-//
 
     private fun copyToClipBoard() {
         val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -98,8 +96,5 @@ class FormActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
-    }
-
-    private fun setSeekListenerValues () {
     }
 }
