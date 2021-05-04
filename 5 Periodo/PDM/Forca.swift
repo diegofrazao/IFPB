@@ -17,40 +17,39 @@ class Forca {
       print("palavra secreta: \(boardGame)")
       print("Digite uma letra: ")
 
-      if let hint = readLine() {
-        let character = Character(hint.lowercased())
+      let hint = String(readLine()!)
+      let character = Character(hint.lowercased())
 
-        if (attempts.contains(character)) {
-          print("Essa letra já foi usada.")
-        }
-
-        attempts.append(character)
-
-        if(self.keyWord.contains(character)) {
-          boardGame = insertLetter(board: boardGame, letter: character)
-          if(boardGame == keyWord) {
-            print("\nvocê ganhou!")
-            break
-          }
-        }
-
-        finalGame -= 1
-
-        if(finalGame == 0) {
-          print("\nvocê perdeu!")
-        }
-      } else {
-        print("tentativa invalida")
+      if (attempts.contains(character) || hint.count != 1) {
+        print("tentativa invalida!")
+        continue
       }
+
+      attempts.append(character)
+
+      if(self.keyWord.contains(character)) {
+        boardGame = insertLetter(board: boardGame, letter: character)
+        if(boardGame == keyWord) {
+          print("\nvocê ganhou!")
+          break
+        }
+      }
+
+      finalGame -= 1
+
+      if(finalGame == 0) {
+        print("\nvocê perdeu!")
+      }
+      
     } while (finalGame > 0)
   }
 
   private func insertLetter(board: String, letter: Character) -> String {
     let splitKeyWord = Array(self.keyWord)
     var splitBoard = Array(board)
-    for i in 0..<wordToArray.count {
-      if (wordToArray[i] == letter) {
-        spacesToArray[i] = letter
+    for i in 0..<splitKeyWord.count {
+      if (splitKeyWord[i] == letter) {
+        splitBoard[i] = letter
       }
     }
     return String(splitBoard)
