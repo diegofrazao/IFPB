@@ -1,7 +1,0 @@
-INTERFACE SEGREGATION:
-+ Prob -> Interface "UsuarioService" tinha Postagem e PostagemResposta dentro.
-+ Solução -> Separar Postagem e PostagemResposta em outras interfaces.
-
-LISKOV:
-+ Prob -> Classe "Usuario" tem método "setPostagens" que sobrescreve todas as mensagens já salvas antes.
-+ Solução -> Alterar o método para adicionar ao invés de sobrescrever.
